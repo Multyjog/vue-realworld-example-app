@@ -11,13 +11,13 @@
  * See https://goo.gl/2aRDsh
  */
 
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
+
 importScripts(
-  "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js"
+  "/precache-manifest.5dc0b86b94ef46593f592531be358a5b.js"
 );
 
-importScripts("/precache-manifest.5dc0b86b94ef46593f592531be358a5b.js");
-
-workbox.core.setCacheNameDetails({ prefix: "realworld-vue" });
+workbox.core.setCacheNameDetails({prefix: "realworld-vue"});
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
