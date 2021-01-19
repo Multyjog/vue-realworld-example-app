@@ -74,8 +74,10 @@ export const actions = {
     context.commit(UPDATE_ARTICLE_IN_LIST, data.article, { root: true });
     context.commit(SET_ARTICLE, data.article);
   },
-  [ARTICLE_PUBLISH]({ state }) {
-    return ArticlesService.create(state.article);
+  [ARTICLE_PUBLISH]({ state, commit }) {
+    let result = ArticlesService.create(state.article);
+    commit(RESET_STATE);
+    return result;
   },
   [ARTICLE_DELETE](context, slug) {
     return ArticlesService.destroy(slug);
